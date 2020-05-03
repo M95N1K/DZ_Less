@@ -21,13 +21,13 @@ namespace DZ_Less2_5
 
             if (index < 20)
             {
-                int m = (int)(22 * heigh * heigh);
-                return (massa - m);
+                int mas = (int)(22 * heigh * heigh);
+                return (massa - mas);
             }
             else if (index > 25)
             {
-                int m = (int)(26 * heigh * heigh);
-                return (massa - m);
+                int mas = (int)(26 * heigh * heigh);
+                return (massa - mas);
             }
             return 0;
         }
