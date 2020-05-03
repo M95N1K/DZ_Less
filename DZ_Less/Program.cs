@@ -1,5 +1,8 @@
 ﻿using System;
 
+//Задание 1
+//  Написать метод, возвращающий минимальное из трёх чисел.
+//Выполнил Виь В. В.  
 
 namespace DZ_Less2_1
 {
@@ -16,6 +19,8 @@ namespace DZ_Less2_1
         static void Main(string[] args)
         {
             Console.WriteLine(MinX());
+
+            Console.ReadKey();
         }
     }
 }
