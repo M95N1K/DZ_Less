@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VClass;
+
 
 namespace DZ_Less2_1
 {
@@ -19,7 +15,7 @@ namespace DZ_Less2_1
         }
         static void Main(string[] args)
         {
-            Cons.Print(MinX());
+            Console.WriteLine(MinX());
         }
     }
 }
