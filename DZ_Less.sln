@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DZ_Less2_5", "DZ_Less2_5\DZ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DZ_Less2_6", "DZ_Less2_6\DZ_Less2_6.csproj", "{4853C221-65A8-40E6-AFA8-3011D05A9FF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DZ_Less2_7", "DZ_Less2_7\DZ_Less2_7.csproj", "{D1CB5D0B-4A22-4C2C-80CC-E8735F56419F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "V_Class", "D:\DOCS\Обучение\Вебинары\Основы_С#\V_Class\V_Class.csproj", "{9E292E29-C409-4C11-B7A9-7761EA10CA1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{4853C221-65A8-40E6-AFA8-3011D05A9FF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4853C221-65A8-40E6-AFA8-3011D05A9FF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4853C221-65A8-40E6-AFA8-3011D05A9FF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1CB5D0B-4A22-4C2C-80CC-E8735F56419F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1CB5D0B-4A22-4C2C-80CC-E8735F56419F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1CB5D0B-4A22-4C2C-80CC-E8735F56419F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1CB5D0B-4A22-4C2C-80CC-E8735F56419F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E292E29-C409-4C11-B7A9-7761EA10CA1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E292E29-C409-4C11-B7A9-7761EA10CA1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E292E29-C409-4C11-B7A9-7761EA10CA1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E292E29-C409-4C11-B7A9-7761EA10CA1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
