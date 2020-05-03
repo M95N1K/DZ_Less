@@ -1,7 +1,7 @@
 ﻿using System;
 
 //Задание 2
-// Написать метод подсчета количества цифр числа.
+//  Написать метод подсчета количества цифр числа.
 //Выполнил Виль В. В.
 
 namespace DZ_Less2_2
@@ -23,7 +23,7 @@ namespace DZ_Less2_2
         }
         static void Main(string[] args)
         {
-            Console.WriteLine(CountNum());
+            Console.WriteLine($"Количество цифр равно {CountNum()}");
             Console.ReadKey();
         }
     }

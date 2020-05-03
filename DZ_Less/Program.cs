@@ -18,7 +18,7 @@ namespace DZ_Less2_1
         }
         static void Main(string[] args)
         {
-            Console.WriteLine(MinX());
+            Console.WriteLine($"Минимальное значение {MinX()}");
 
             Console.ReadKey();
         }
