@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+//Задание 2
+//  С клавиатуры вводятся числа, пока не будет введён 0 (каждое число в новой строке). 
+//  Требуется подсчитать сумму всех нечётных положительных чисел. Сами числа и сумму вывести на экран, используя tryParse.
+//Выполнил Виль В.В.
 
 namespace DZ_Less3_2
 {
@@ -16,6 +18,7 @@ namespace DZ_Less3_2
             int num;
             do
             {
+                //ArgumentException;
                 key = int.TryParse(Console.ReadLine(), out num);
                 if (key && (num % 2 != 0) && num > 0)
                 {
