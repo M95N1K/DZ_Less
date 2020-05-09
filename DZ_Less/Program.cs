@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 //Задание 1
 //  Дан  целочисленный  массив  из 20 элементов.  Элементы  массива  могут принимать  целые  значения  от –10 000 до 10 000 включительно. 
@@ -22,12 +18,12 @@ namespace DZ_Less4_1
         static int ColDiv3(int[] value)
         {
             int count = 0;
-            for (int i = 0; i < value.Length-1; i++)
+            for (int i = 0; i < value.Length - 1; i++)
             {
                 if ((value[i] % 3 == 0) && (value[i + 1] % 3 != 0))
                     count++;
             }
-            
+
             return count;
         }
         static void Main(string[] args)
@@ -43,7 +39,7 @@ namespace DZ_Less4_1
                 Console.Write("{0} ", value);
             }
 
-            Console.WriteLine("количество пар элементов массива, в которых только одно число делится на 3: {0}", ColDiv3(intArr));
+            Console.WriteLine("\nKоличество пар элементов массива, в которых только одно число делится на 3: {0}", ColDiv3(intArr));
 
             Console.ReadLine();
         }
