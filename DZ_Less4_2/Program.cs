@@ -29,13 +29,15 @@ namespace DZ_Less4_2
             Console.WriteLine("\nKоличество пар элементов массива, в которых только одно число делится на 3: {0}", Arrays.ColDiv3(intArr));
 
             intArr = Arrays.ReadFromFile("..\\..\\data.txt");
-            foreach (int value in intArr)
+            if (!(intArr is null))
             {
-                Console.Write("{0} ", value);
+                foreach (int value in intArr)
+                {
+                    Console.Write("{0} ", value);
+                }
+
+                Console.WriteLine("\nKоличество пар элементов массива, в которых только одно число делится на 3: {0}", Arrays.ColDiv3(intArr));
             }
-
-            Console.WriteLine("\nKоличество пар элементов массива, в которых только одно число делится на 3: {0}", Arrays.ColDiv3(intArr));
-
             Console.ReadLine();
         }
     }

@@ -25,8 +25,17 @@ namespace DZ_Less4_2
         {
             int[] result = new int[maxElementCount];
             int count = 0;
-
-            StreamReader file = new StreamReader(filePath);
+            StreamReader file;
+            try
+            {
+                file = new StreamReader(filePath);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                return result = null;
+            }
+            
            
 
             while (!file.EndOfStream)
@@ -40,7 +49,7 @@ namespace DZ_Less4_2
                 }
                 catch (Exception exc)
                 {
-                    Console.WriteLine(exc.Message);
+                    
                 }
                 
             }
