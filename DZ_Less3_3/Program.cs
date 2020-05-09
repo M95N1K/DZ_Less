@@ -26,7 +26,7 @@ namespace DZ_Less3_3
 
             fractionsC = fractionsA.Sum(fractionsB);
             fractionsC.FractionReduction();
-            Console.WriteLine("Сложение : {0}", fractionsC.ToString());
+            Console.WriteLine("Сложение : {0} / {1:.000}", fractionsC.ToString() , fractionsC.DecimalFactions);
             fractionsC = fractionsA.Subtraction(fractionsB);
             fractionsC.FractionReduction();
             Console.WriteLine("Вычитание: {0}", fractionsC.ToString());

@@ -20,7 +20,12 @@ namespace DZ_Less3_3
                 else throw new ArgumentException("Знаменатель не должен ровняться 0");
             } 
         }
-        public double DecimalFactions { get => numerator / denominator; }
+        public double DecimalFactions { 
+            get
+            {
+                return ((double)whole + (double)numerator / (double)denominator);
+            }
+        }
 
         public Simple_Fractions() 
         {
