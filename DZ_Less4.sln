@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DZ_Less4_2", "DZ_Less4_2\DZ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DZ_Less4_3", "DZ_Less4_3\DZ_Less4_3.csproj", "{1734BB45-8B49-49D1-91BC-02D920D516DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDimensArray", "OneDimensArray\OneDimensArray.csproj", "{91B8347A-41DB-41CA-B8E7-AF27A82BAFC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1734BB45-8B49-49D1-91BC-02D920D516DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1734BB45-8B49-49D1-91BC-02D920D516DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1734BB45-8B49-49D1-91BC-02D920D516DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91B8347A-41DB-41CA-B8E7-AF27A82BAFC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91B8347A-41DB-41CA-B8E7-AF27A82BAFC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91B8347A-41DB-41CA-B8E7-AF27A82BAFC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91B8347A-41DB-41CA-B8E7-AF27A82BAFC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

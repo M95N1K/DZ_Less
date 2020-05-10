@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using OneDimensArray;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,10 +30,9 @@ namespace DZ_Less4_3
             return result;
         }
 
-        static void Main(string[] args)
+        static void TestUnits()
         {
-
-            OneDimensionalArrays ars = new OneDimensionalArrays(20, 10, 20);
+            MyArrays ars = new MyArrays(20, -10, 20);
             Dictionary<int, int> rate = ars.OccurrenceRate();
             int[] invert;
 
@@ -41,7 +41,7 @@ namespace DZ_Less4_3
             Console.WriteLine("Сумма элементов равна: {0}", ars.Sum);
 
             Console.WriteLine("Данные вхождений");
-            foreach (KeyValuePair<int, int> item in rate) 
+            foreach (KeyValuePair<int, int> item in rate)
             {
                 Console.WriteLine("{0} - {1}", item.Key, item.Value);
             }
@@ -55,6 +55,40 @@ namespace DZ_Less4_3
             Console.WriteLine("Инвертирование массива \n{0}", ArrToString(invert));
             ars.Multi(2);
             Console.WriteLine("Массив умноженный на 2 \n{0}", ars.ToString());
+        }
+
+        static void TestClass()
+        {
+            OneDimensionalArrays ars = new OneDimensionalArrays(20, 10, 20);
+            Dictionary<int, int> rate = ars.OccurrenceRate();
+            int[] invert;
+
+            Console.WriteLine(ars.ToString());
+
+            Console.WriteLine("Сумма элементов равна: {0}", ars.Sum);
+
+            Console.WriteLine("Данные вхождений");
+            foreach (KeyValuePair<int, int> item in rate)
+            {
+                Console.WriteLine("{0} - {1}", item.Key, item.Value);
+            }
+
+            Console.WriteLine("Количество максимального ({1}) элементa: {0}", ars.MaxCount, ars.MaxElement());
+
+            Console.WriteLine("Минимальный элемент {0}", ars.MinElement());
+            Console.WriteLine("Среднее значение: {0:.00}", ars.Mean());
+            Console.WriteLine("Количество положительных элементов: {0}", ars.CountPositive());
+            invert = ars.Inverse();
+            Console.WriteLine("Инвертирование массива \n{0}", ArrToString(invert));
+            ars.Multi(2);
+            Console.WriteLine("Массив умноженный на 2 \n{0}", ars.ToString());
+        }
+        static void Main(string[] args)
+        {
+            TestClass();
+            Console.WriteLine("--------------------------------");
+            TestUnits();
+            
 
             Console.ReadLine();
         }
