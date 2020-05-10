@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DZ_Less4_2
 {
@@ -21,7 +17,7 @@ namespace DZ_Less4_2
             return count;
         }
 
-        public static int[] ReadFromFile(string filePath , int maxElementCount = 20)
+        public static int[] ReadFromFile(string filePath, int maxElementCount = 20)
         {
             int[] result = new int[maxElementCount];
             int count = 0;
@@ -33,10 +29,8 @@ namespace DZ_Less4_2
             catch (Exception exc)
             {
                 Console.WriteLine(exc.Message);
-                return result = null;
+                return null;
             }
-            
-           
 
             while (!file.EndOfStream)
             {
@@ -49,9 +43,10 @@ namespace DZ_Less4_2
                 }
                 catch (Exception exc)
                 {
-                    
+                    Console.WriteLine(exc.Message);
+                    return null;
                 }
-                
+
             }
 
             return result;
