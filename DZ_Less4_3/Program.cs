@@ -1,9 +1,6 @@
-﻿using System;
+﻿using OneDimensArray;
+using System;
 using System.Collections.Generic;
-using OneDimensArray;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 //Задание 3
@@ -88,7 +85,7 @@ namespace DZ_Less4_3
             TestClass();
             Console.WriteLine("--------------------------------");
             TestUnits();
-            
+
 
             Console.ReadLine();
         }
