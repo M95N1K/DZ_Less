@@ -19,8 +19,6 @@ namespace DZ_Less4_2
 
         public static int[] ReadFromFile(string filePath, int maxElementCount = 20)
         {
-            int[] result = new int[maxElementCount];
-            int count = 0;
             StreamReader file;
             try
             {
@@ -31,6 +29,9 @@ namespace DZ_Less4_2
                 Console.WriteLine(exc.Message);
                 return null;
             }
+
+            int[] result = new int[maxElementCount];
+            int count = 0;
 
             while (!file.EndOfStream)
             {
