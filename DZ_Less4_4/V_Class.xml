@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>V_Class</name>
+    </assembly>
+    <members>
+        <member name="M:VClass.Cons.PrintL(System.Char,System.Int32,System.Int32)">
+            <summary>Выводит сообщение в координатах с переходом на новую строку</summary>
+        </member>
+        <member name="M:VClass.Cons.PrintL(System.String,System.Int32,System.Int32)">
+            <summary>Выводит сообщение в координатах с переходом на новую строку</summary>
+        </member>
+        <member name="M:VClass.Cons.PrintС(System.Char,System.ConsoleColor)">
+            <summary>
+              Выводит сообщение с заданым цветом текста (после вывода цвет возвращается в предыдущий)
+            </summary>
+        </member>
+        <member name="M:VClass.Cons.PrintС(System.String,System.ConsoleColor)">
+            <summary>
+              Выводит сообщение с заданым цветом текста (после вывода цвет возвращается в предыдущий)
+            </summary>
+        </member>
+        <member name="M:VClass.Cons.Print(System.Char,System.Int32,System.Int32)">
+            <summary>Вывод в консоль сообщение по координатам</summary>
+        </member>
+        <member name="M:VClass.Cons.Pause(System.String)">
+            <summary> Ожидание нажатия Enter с выводом перед этим сообщения</summary>
+        </member>
+        <member name="M:VClass.Cons.PauseK(System.String)">
+            <summary> Ожидание нажатия любой кнопки с выводом перед этим сообщения</summary>
+        </member>
+        <member name="M:VClass.Cons.Read(System.String)">
+            <summary> Запрашивает ввод данных с предложением о вводе </summary>
+        </member>
+        <member name="M:VClass.Cons.ReadInt(System.String)">
+            <summary> Запрашивает ввод данных с предложением о вводе </summary>
+        </member>
+        <member name="M:VClass.Cons.ReadDouble(System.String)">
+            <summary> Запрашивает ввод данных с предложением о вводе </summary>
+        </member>
+    </members>
+</doc>
