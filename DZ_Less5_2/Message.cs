@@ -1,14 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
+
+//Задание 2
+//  Разработать статический класс Message, содержащий следующие статические методы для обработки текста:
+//  а) Вывести только те слова сообщения,  которые содержат не более n букв.
+//  б) Удалить из сообщения все слова, которые заканчиваются на заданный символ.
+//  в) Найти самое длинное слово сообщения.
+//  г) Сформировать строку с помощью StringBuilder из самых длинных слов сообщения.
+//  д) *** Создать метод, который производит частотный анализ текста.В качестве параметра в него передается массив слов и текст, 
+//      в качестве результата метод возвращает сколько раз каждое из слов массива входит в этот текст.Здесь требуется использовать класс Dictionary.
+//Выполнил Виль В.В.
 
 namespace DZ_Less5_2
 {
     static class Message
     {
-        static char[] separators = new char[] { ',', ' ', '.', '/', '\\', '!', ':', ';', '?', '<', '>', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '[', ']', '{', '}', '"', '\'', '|' ,'\n'};
+        static char[] separators = new char[] { ',', ' ', '.', '/', '\\', '!', ':', ';', '?', '<', '>', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '[', ']', '{', '}', '"', '\'', '|', '\n' };
         /// <summary>
         /// Возвращает слова длина которых менее maxSymbol
         /// </summary>
@@ -18,7 +25,7 @@ namespace DZ_Less5_2
         public static string WordsMaxSymbols(string inputText, int maxSymbol)
         {
             string result = "";
-            
+
             string[] arrWord = inputText.Split(separators);
 
             foreach (string item in arrWord)
@@ -34,15 +41,15 @@ namespace DZ_Less5_2
         /// </summary>
         /// <param name="bySymbol">Символ по которому удалябтся слова</param>
         /// <param name="text">Текст в котором надо удалить слова</param>
-        public static void DelWordsByEndSymb(char bySymbol , ref string text)
+        public static void DelWordsByEndSymb(char bySymbol, ref string text)
         {
             List<string> tmpstring = new List<string>();
             int position = 0;
             int start = 0;
             do
             {
-                position = text.IndexOfAny(separators,start);
-                if (position >=0)
+                position = text.IndexOfAny(separators, start);
+                if (position >= 0)
                 {
                     string tmp = text.Substring(start, position - start + 1).Trim();
                     if ((tmp[tmp.Length - 1] != bySymbol))
@@ -110,7 +117,7 @@ namespace DZ_Less5_2
         {
             string[] arrWord = text.Split(separators);
             Dictionary<string, int> result = new Dictionary<string, int>();
-            
+
             for (int i = 0; i < words.Length; i++)
             {
                 result.Add(words[i].ToUpper(), 0);
@@ -129,15 +136,15 @@ namespace DZ_Less5_2
         /// </summary>
         /// <param name="dict"></param>
         /// <returns></returns>
-        public static string DictToString(this Dictionary<string , int> dict)
+        public static string DictToString(this Dictionary<string, int> dict)
         {
             string result = "";
 
-            foreach (KeyValuePair<string , int> item in dict)
+            foreach (KeyValuePair<string, int> item in dict)
             {
-                result += string.Format("{0} - {1} \n", item.Key,item.Value );
+                result += string.Format("{0} - {1} \n", item.Key, item.Value);
             }
-            
+
             return result;
         }
     }

@@ -1,9 +1,15 @@
-﻿using System;
-using static System.Console;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using static System.Console;
+
+
+//Задание 2
+//  Разработать статический класс Message, содержащий следующие статические методы для обработки текста:
+//  а) Вывести только те слова сообщения,  которые содержат не более n букв.
+//  б) Удалить из сообщения все слова, которые заканчиваются на заданный символ.
+//  в) Найти самое длинное слово сообщения.
+//  г) Сформировать строку с помощью StringBuilder из самых длинных слов сообщения.
+//  д) *** Создать метод, который производит частотный анализ текста.В качестве параметра в него передается массив слов и текст, 
+//      в качестве результата метод возвращает сколько раз каждое из слов массива входит в этот текст.Здесь требуется использовать класс Dictionary.
+//Выполнил Виль В.В.
 
 namespace DZ_Less5_2
 {
@@ -14,9 +20,13 @@ namespace DZ_Less5_2
             string s = "Соответствует концу строкового выражения или концу строки при многострочном поиске . Соответствует Концу Концу";
             string[] arrS = new string[] { "Соответствует", "концу" };
 
-            WriteLine(Message.WordsMaxLength(s));
-            
+            WriteLine("Слова максимальной длинны \n{0}", Message.WordsMaxLength(s));
+            WriteLine("Самое длинное слово \n{0}", Message.WordMaxLength(s));
+            WriteLine("Слова длиной менее 6 символов \n{0}", Message.WordsMaxSymbols(s, 6));
             WriteLine(Message.WordFrequency(arrS, s).DictToString());
+            Message.DelWordsByEndSymb('у', ref s);
+            WriteLine("Редактированный текст \n{0}", s);
+
             ReadLine();
         }
     }
