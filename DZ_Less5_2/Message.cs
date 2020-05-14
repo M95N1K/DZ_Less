@@ -99,5 +99,46 @@ namespace DZ_Less5_2
 
             return result.ToString();
         }
+
+        /// <summary>
+        /// Возвращает частоту вхождения слов из words в тексте text
+        /// </summary>
+        /// <param name="words">Массив слов которых надо подсчитать</param>
+        /// <param name="text">Текст в котором нужно подсчитать</param>
+        /// <returns></returns>
+        public static Dictionary<string, int> WordFrequency(string[] words, string text)
+        {
+            string[] arrWord = text.Split(separators);
+            Dictionary<string, int> result = new Dictionary<string, int>();
+            
+            for (int i = 0; i < words.Length; i++)
+            {
+                result.Add(words[i].ToUpper(), 0);
+            }
+
+            for (int i = 0; i < arrWord.Length; i++)
+            {
+                if (result.ContainsKey(arrWord[i].ToUpper()))
+                    result[arrWord[i].ToUpper()]++;
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Возвращает WordFrequency (Dictionary<string , int>) в виде таблицы Key - Value
+        /// </summary>
+        /// <param name="dict"></param>
+        /// <returns></returns>
+        public static string DictToString(this Dictionary<string , int> dict)
+        {
+            string result = "";
+
+            foreach (KeyValuePair<string , int> item in dict)
+            {
+                result += string.Format("{0} - {1} \n", item.Key,item.Value );
+            }
+            
+            return result;
+        }
     }
 }

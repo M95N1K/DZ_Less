@@ -11,12 +11,12 @@ namespace DZ_Less5_2
     {
         static void Main(string[] args)
         {
-            string s = "Соответствует концу строкового выражения или концу строки при многострочном поиске";
-
-            //Message.DelWordsByEndSymb('у', ref s);
+            string s = "Соответствует концу строкового выражения или концу строки при многострочном поиске . Соответствует Концу Концу";
+            string[] arrS = new string[] { "Соответствует", "концу" };
 
             WriteLine(Message.WordsMaxLength(s));
-
+            
+            WriteLine(Message.WordFrequency(arrS, s).DictToString());
             ReadLine();
         }
     }
