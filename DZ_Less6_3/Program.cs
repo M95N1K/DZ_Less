@@ -10,21 +10,22 @@ using System.Reflection;
 
 namespace DZ_Less6_3
 {
+    public struct Student
+    {
+        public string firstName;
+        public string secondName;
+        public string univercity;
+        public string faculty;
+        public string department;
+        public int age;
+        public int course;
+        public int group;
+        public string city;
+    }
+
     class Program
     {
-        struct Student
-        {
-
-            public string firstName;
-            public string secondName;
-            public string univercity;
-            public string faculty;
-            public string department;
-            public int age;
-            public int course;
-            public int group;
-            public string city;
-        }
+        
 
         static Student[] ParseToStudent(string filePath)
         {
@@ -88,7 +89,58 @@ namespace DZ_Less6_3
             return result;
         }
 
-        
+        static void SortByCource(ref Student[] students)
+        {
+            bool trans = false;
+            do
+            {
+                trans = false;
+                for (int i = 0; i < students.Length-1; i++)
+                {
+                    if (students[i].course > students[i + 1].course)
+                    {
+                        Student tmp = students[i];
+                        students[i] = students[i + 1];
+                        students[i + 1] = tmp;
+                        trans = true;
+                    }
+                }
+            } while (trans);
+        }
+
+        static void DobleSort(ref Student[] students)
+        {
+            SortByCource(ref students);
+            int maxCourse = students[students.Length - 1].course;
+            int minCourse = students[0].course;
+            bool trans = false;
+            for (int course = minCourse; course <= maxCourse; course++)
+            {
+                do
+                {
+                    trans = false;
+                    for (int i = 0; i < students.Length-1; i++)
+                    {
+                        if (students[i+1].course > course)
+                            break;
+                        else if (students[i+1].course < course)
+                            continue;
+                        else if (students[i].course == course)
+                        {
+                            if (students[i].age > students[i+1].age)
+                            {
+                                Student tmp = students[i];
+                                students[i] = students[i + 1];
+                                students[i + 1] = tmp;
+                                trans = true;
+                            }
+                        }
+
+                    }
+                } while (trans);
+            }
+        }
+
 
         static void Main(string[] args)
         {
@@ -104,19 +156,42 @@ namespace DZ_Less6_3
 
             WriteLine("Количество магистров: {0}", CountMagist(students));
             Dictionary<int, int> stud = new Dictionary<int, int>();
-
-            WriteLine(Col18To20OfCource(students).ToString());
-            
+            WriteLine("Курс - Количество студентов от 18 до 20 лет");
+            WriteLine(Col18To20OfCource(students).DictToString());
+            WriteLine("ДО");
+            WriteLine("Имя - Фамилия - Курс - Возраст");
+            for (int i = 0; i < students.Length; i++)
+            {
+                WriteLine(students[i].StudToStringParts());
+            }
+            WriteLine("ПОСЛЕ");
+            DobleSort(ref students);
+            WriteLine("Имя - Фамилия - Курс - Возраст");
+            for (int i = 0; i < students.Length; i++)
+            {
+                WriteLine(students[i].StudToStringParts());
+            }
             ReadLine();
         }
 
+        
+    }
+
+    internal static class Helps
+    {
         public static string DictToString(this Dictionary<int, int> dict)
         {
             string result = "";
             foreach (KeyValuePair<int, int> item in dict)
             {
-                result += string.Format("{0} - {1}\n", item.Key, item.Value);
+                result += string.Format("{0,4} - {1}\n", item.Key, item.Value);
             }
+            return result;
+        }
+
+        public static string StudToStringParts(this Student student)
+        {
+            string result = string.Format("{0,15} - {1,10} - {2,1} - {3,3}",student.firstName , student.secondName , student.course , student.age);
             return result;
         }
     }
