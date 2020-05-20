@@ -25,7 +25,7 @@ namespace DZ_Less6_3
 
     class Program
     {
-        
+        delegate Dictionary<string, int> SamplBy(Student[] students);
 
         static Student[] ParseToStudent(string filePath)
         {
@@ -70,26 +70,125 @@ namespace DZ_Less6_3
             return result;
         }
 
-        static Dictionary<int , int> Col18To20OfCource(Student[] students)
+        static Dictionary<string , int> Col18To20OfCource(Student[] students)
         {
-            Dictionary<int, int> result = new Dictionary<int, int>();
-            result.Add(1, 0);
-            result.Add(2, 0);
-            result.Add(3, 0);
-            result.Add(4, 0);
-            result.Add(5, 0);
-            result.Add(6, 0);
+            Dictionary<string, int> result = new Dictionary<string, int>();
+            result.Add("1", 0);
+            result.Add("2", 0);
+            result.Add("3", 0);
+            result.Add("4", 0);
+            result.Add("5", 0);
+            result.Add("6", 0);
 
             for (int i = 0; i < students.Length; i++)
             {
                 if ((students[i].age >= 18) && (students[i].age <= 20))
-                    result[students[i].course]++;
+                    result[students[i].course.ToString()]++;
             }
 
             return result;
         }
 
-        static void SortByCource(ref Student[] students)
+        static Dictionary<string, int> ByFaculty(Student[] students)
+        {
+            Dictionary<string, int> result = new Dictionary<string, int>();
+
+            for (int i = 0; i < students.Length; i++)
+            {
+                string key = students[i].faculty;
+                if (result.ContainsKey(key))
+                    result[key]++;
+                else result.Add(key, 0);
+            }
+
+            return result;
+        }
+        static Dictionary<string, int> ByDepartament(Student[] students)
+        {
+            Dictionary<string, int> result = new Dictionary<string, int>();
+
+            for (int i = 0; i < students.Length; i++)
+            {
+                string key = students[i].department;
+                if (result.ContainsKey(key))
+                    result[key]++;
+                else result.Add(key, 0);
+            }
+
+            return result;
+        }
+        static Dictionary<string, int> ByAge(Student[] students)
+        {
+            Dictionary<string, int> result = new Dictionary<string, int>();
+
+            for (int i = 0; i < students.Length; i++)
+            {
+                string key = students[i].age.ToString();
+                if (result.ContainsKey(key))
+                    result[key]++;
+                else result.Add(key, 1);
+            }
+
+            return result;
+        }
+        static Dictionary<string, int> ByCourse(Student[] students)
+        {
+            Dictionary<string, int> result = new Dictionary<string, int>();
+
+            for (int i = 0; i < students.Length; i++)
+            {
+                string key = students[i].course.ToString();
+                if (result.ContainsKey(key))
+                    result[key]++;
+                else result.Add(key, 0);
+            }
+
+            return result;
+        }
+        static Dictionary<string, int> ByGroup(Student[] students)
+        {
+            Dictionary<string, int> result = new Dictionary<string, int>();
+
+            for (int i = 0; i < students.Length; i++)
+            {
+                string key = students[i].group.ToString();
+                if (result.ContainsKey(key))
+                    result[key]++;
+                else result.Add(key, 0);
+            }
+
+            return result;
+        }
+        static Dictionary<string, int> ByCity(Student[] students)
+        {
+            Dictionary<string, int> result = new Dictionary<string, int>();
+
+            for (int i = 0; i < students.Length; i++)
+            {
+                string key = students[i].city;
+                if (result.ContainsKey(key))
+                    result[key]++;
+                else result.Add(key, 0);
+            }
+
+            return result;
+        }
+
+        static Dictionary<string , int> StudentsSampl(Student[] students, SamplingBy samplingBy)
+        {
+            SamplBy[] arrDelegat = new SamplBy[6];
+            int i = 0;
+            arrDelegat[i++] = ByFaculty;
+            arrDelegat[i++] = ByDepartament;
+            arrDelegat[i++] = ByAge;
+            arrDelegat[i++] = ByCourse;
+            arrDelegat[i++] = ByGroup;
+            arrDelegat[i++] = ByCity;
+
+            return arrDelegat[(int)samplingBy].Invoke(students);
+        }
+
+        static void SortByCource(ref Student[] students) // Сортировка по курсу
         {
             bool trans = false;
             do
@@ -108,7 +207,7 @@ namespace DZ_Less6_3
             } while (trans);
         }
 
-        static void DobleSort(ref Student[] students)
+        static void DobleSort(ref Student[] students) // Сортировка по курсу и возрасту
         {
             SortByCource(ref students);
             int maxCourse = students[students.Length - 1].course;
@@ -158,6 +257,11 @@ namespace DZ_Less6_3
             Dictionary<int, int> stud = new Dictionary<int, int>();
             WriteLine("Курс - Количество студентов от 18 до 20 лет");
             WriteLine(Col18To20OfCource(students).DictToString());
+            
+            SamplingBy samp = SamplingBy.Age;
+            WriteLine("Выборка по {0}", samp.SamplToString());
+            WriteLine(StudentsSampl(students, samp).DictToString());
+
             WriteLine("ДО");
             WriteLine("Имя - Фамилия - Курс - Возраст");
             for (int i = 0; i < students.Length; i++)
@@ -179,10 +283,10 @@ namespace DZ_Less6_3
 
     internal static class Helps
     {
-        public static string DictToString(this Dictionary<int, int> dict)
+        public static string DictToString(this Dictionary<string, int> dict)
         {
             string result = "";
-            foreach (KeyValuePair<int, int> item in dict)
+            foreach (KeyValuePair<string, int> item in dict)
             {
                 result += string.Format("{0,4} - {1}\n", item.Key, item.Value);
             }
